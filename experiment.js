@@ -122,6 +122,7 @@
       html += "<h1>Faces rating</h1>";
       html += "<p class='justify'>Now, you have to evaluate the 2 other faces. "
       html += "As before, <b>we will briefly display these 2 faces</b></p>.";
+      html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
       return html;
     },
     on_load: function() {
