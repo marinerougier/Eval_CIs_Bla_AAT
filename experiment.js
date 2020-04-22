@@ -74,7 +74,7 @@
   };
   // Judgments
 
-  var scaleAgressivity = ["0</br>Not agressive at all", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100</br>Totally aggressive"];
+  var scaleAggressiveness = ["0</br>Not aggressive at all", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100</br>Totally aggressive"];
   var scaleTrustworthiness = ["0</br>Not trustworthy at all", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100</br>Totally trustworthy"];
   var scaleCriminality = ["0</br>Not criminal at all", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100</br>Totally criminal"];
 
@@ -84,7 +84,7 @@
         type: 'survey-likert',
         preamble: ciImg.imgHtml,
         questions: [
-          {prompt: "", labels: scaleAgressivity, required: true},
+          {prompt: "", labels: scaleAggressiveness, required: true},
           {prompt: "", labels: scaleTrustworthiness, required: true},
           {prompt: "", labels: scaleCriminality, required: true},
         ],
@@ -102,7 +102,7 @@
         },
         on_finish: function(data) {
           var parsed_response  = JSON.parse(data.responses);
-          data.agressivity     = parsed_response.Q0 * 10;
+          data.aggressiveness     = parsed_response.Q0 * 10;
           data.trustworthiness = parsed_response.Q1 * 10;
           data.criminality     = parsed_response.Q2 * 10;
           data.ci              = ciImg.imgHtml;
@@ -156,7 +156,7 @@
         type: 'survey-likert',
         preamble: ciImg.imgHtml,
         questions: [
-          {prompt: "", labels: scaleAgressivity, required: true},
+          {prompt: "", labels: scaleAggressiveness, required: true},
           {prompt: "", labels: scaleTrustworthiness, required: true},
           {prompt: "", labels: scaleCriminality, required: true},
         ],
@@ -174,7 +174,7 @@
         },
         on_finish: function(data) {
           var parsed_response  = JSON.parse(data.responses);
-          data.agressivity     = parsed_response.Q0 * 10;
+          data.aggressiveness    = parsed_response.Q0 * 10;
           data.trustworthiness = parsed_response.Q1 * 10;
           data.criminality     = parsed_response.Q2 * 10;
           data.ci              = ciImg.imgHtml;
