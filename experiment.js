@@ -230,6 +230,19 @@
         },
     };
 
+  var RaceOptions = ['American Indian or Alaska Native', 'Asian', 'Black or African American', 'Hispanic or Latino', 'Native Hawaiian or Other Pacific Islander', 'White'];
+  var Race = {
+        type: 'survey-multi-choice',
+        questions: [{ prompt: "Please indicate your racial/ethnic category:", options: RaceOptions, required: true }],
+        button_label: "continue",
+        on_finish: function (data) {
+            jsPsych.data.addProperties({
+                Race: JSON.parse(data.responses).Q0,
+            });
+            console.log(data);
+        },
+      };
+
   var Prolific_reported = {
         timeline: [{
             type: 'survey-text',
@@ -274,6 +287,7 @@
   timeline.push(age);
   timeline.push(gender);
   timeline.push(language);
+  timeline.push(Race);
   timeline.push(Prolific_reported);
   timeline.push(exitFullscreen);
   
